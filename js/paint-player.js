@@ -91,7 +91,6 @@ var PaintPlayer = {
 
 			if(info.required > info.count) {
 				PaintPlayer._playNext();
-				console.log("Waiting for a render");
 				return;
 			}
 
