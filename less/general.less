@@ -27,11 +27,15 @@ header {
 	color: @white;
 }
 
-#paper-playback {
+#playback {
 	background: #F0F0F0;
+
+	> canvas {
+		position: absolute;
+	}
 }
 
-#paper, #paper-playback {
+#paper, #playback {
 	display: block;
 	position: fixed;
 	height: 100%;

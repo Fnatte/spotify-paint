@@ -16,18 +16,22 @@ $(function(){
 		Paint.startNew();
 	});
 	$('.menu .save').click(function(e){
-		console.log("Saving...");
 		$('#save-modal').modal();
-		console.log("done.");
 	});
 	$('#save').click(function(e) {
 		var name = $('#save-modal input').val();
 
 		if(name.length > 0) {
+			/*
 			localStorage['recording.' + name] = JSON.stringify({
 				trackUri: Paint.trackUri,
-				records: Paint.recording
+				records: Paint.getRecording()
 			});
+			*/
+			Paint.toCurrentRecording();
+			PaintState.currentRecording.name = name;
+			PaintState.currentRecording.save();
+
 			$('#save-modal').modal('hide');
 		}
 	});
@@ -54,7 +58,7 @@ $(function(){
 	$('#open').click(function(e){
 		console.log("Loading...");
 		Paint.reset();
-		PaintPlayer.context = $('#paper-playback')[0].getContext('2d');
+		// PaintPlayer.context = $('#paper-playback')[0].getContext('2d');
 		PaintPlayer.open($('#open-modal select').val());
 		console.log("Loaded.");
 		PaintPlayer.play();

@@ -24,11 +24,14 @@ header {
   padding: 0 10px;
   color: #ffffff;
 }
-#paper-playback {
+#playback {
   background: #F0F0F0;
 }
+#playback > canvas {
+  position: absolute;
+}
 #paper,
-#paper-playback {
+#playback {
   display: block;
   position: fixed;
   height: 100%;
