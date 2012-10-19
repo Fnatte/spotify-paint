@@ -1,0 +1,115 @@
+@import "bootstrap/variables.less";
+
+body {
+	min-height: 500px;
+}
+
+header {
+	height: 60px;
+	background-color: #888;
+	border-bottom: 1px solid #000;
+}
+
+.form-horizontal .control-label { width: auto; }
+.form-horizontal .controls { margin-left: 5px; }
+
+#logo {
+	background: url(../img/logo.png);
+	vertical-align: middle;
+	height: 60px;
+	width: 146px;
+	margin: 0 auto;
+}
+
+#toolbar {
+	height: 32px;
+	padding: 0 10px;
+	color: @white;
+}
+
+#paper-playback {
+	background: #F0F0F0;
+}
+
+#paper, #paper-playback {
+	display: block;
+	position: fixed;
+	height: 100%;
+	top: 93px;
+	left: 0;
+	right: 0;
+	bottom: 0;
+}
+
+#paper-cursor {
+	background: #000;
+	display: block;
+	position: fixed;
+	width: 32px;
+	height: 32px;
+}
+
+.tools {
+	padding-top: 3px;
+	float: left;
+
+	.tool {
+		float: left;
+		height: 32px;
+		vertical-align: middle;
+		margin-right: 20px;
+	}
+}
+
+.brush-size input {
+	width: 50px;
+}
+
+.tool > div, .tool > label { float: left; }
+
+.brush-size > ul {
+	display: none;
+	position: absolute;
+	min-width: 160px;
+	z-index: 100;
+	border: 1px solid #555;
+	border-bottom: none;
+	list-style-type: none;
+}
+
+.brush-size > ul > li {
+	background: #EEE;
+	color: #000;
+	border-bottom: 1px solid #555;
+	font-size: 90%;
+	padding-left: 10px;
+}
+
+.brush-size > ul > li:hover {
+	background: #CCC;
+	cursor: pointer;
+}
+
+#color-input {
+	font-size: 14px;
+}
+
+.menu {
+	float: left;
+	margin-right: 50px;
+
+	ul.nav > li > a {
+		color: @white;
+
+		&:hover {
+			color: @gray;
+		}
+	}
+}
+
+#open-modal {
+	overflow: visible;
+	.modal-body {
+		overflow: visible;
+	}
+}

@@ -1,0 +1,28 @@
+{
+	"AppDescription": {
+		"en": "En liten app."
+	},
+	"AppName": {
+		"en": "Måla"
+	},
+	"BundleIdentifier": "paint",
+	"BundleType": "Application",
+	"BundleVersion": "0.1",
+	"DefaultTabs": [
+		{
+			"arguments": "index",
+			"title": {
+				"en": "Home"
+			}
+		}
+	],
+	"Dependencies": {
+	  "api": "0.2.3",
+	  "util": "0.1.0",
+	  "resources": "0.2.2"
+  	},
+	"RequiredInterface": 1,
+	"RequiredPermissions": [],
+	"SupportedLanguages": ["en"],
+	"VendorIdentifier": "com.teuz"
+}

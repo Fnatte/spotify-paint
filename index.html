@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>Paint</title>
+		<link href="sp://import/css/shared.css" rel="stylesheet" />
+		<link href="css/bootstrap.css" rel="stylesheet" />
+		<link href="css/colorpicker.css" rel="stylesheet" />
+		<link href="css/chosen.css" rel="stylesheet" />
+		<link href="css/general.css" rel="stylesheet" />
+
+		<script src="js/jquery-1.8.2.js" type="text/javascript"></script>
+		<script src="js/bootstrap.js" type="text/javascript"></script>
+		<script src="js/bootstrap-colorpicker.js" type="text/javascript"></script>
+		<script src="js/chosen.jquery.js" type="text/javascript"></script>
+		<script src="js/paint.js" type="text/javascript"></script>
+		<script src="js/paint-player.js" type="text/javascript"></script>
+		<script src="js/toolbar.js" type="text/javascript"></script>
+	</head>
+	<body>
+		<header>
+			<div id="logo"></div>
+		</header>
+		<div id="toolbar" class="form-horizontal">
+			<div class="menu">
+				<ul class="nav nav-pills">
+					<li class="dropdown">
+						<a class="dropdown-toggle" data-toggle="dropdown" href="#">
+							Menu <b class="caret"></b>
+						</a>
+						<ul class="dropdown-menu">
+							<li>
+								<a class="new" href="#new">New</a>
+							</li>
+							<li>
+								<a class="save" href="#save">Save</a>
+							</li>
+							<li>
+								<a class="open" href="#open">Open</a>
+							</li>
+						</ul>
+					</li>
+				</ul>
+			</div>
+
+			<div class="tools">
+				<div class="tool brush-size control-group">
+					<label for="brush-size-input" class="control-label">Brush size: </label>
+					<div class="controls">
+						<div class="input-append">
+							<input id="brush-size-input" type="text" value="32" />
+							<button class="btn">Select</button>
+						</div>
+					</div>
+					<ul class="brush-size">
+						<li>1</li><li>2</li><li>4</li><li>8</li><li>16</li>
+						<li>32</li><li>64</li><li>128</li><li>256</li>
+					</ul>
+				</div>
+				<div class="tool foreground-color control-group">
+					<label for="color-input" class="control-label">Color:</label>
+					<div class="controls">
+						<div id="color-picker" class="color" data-color="rgba(200, 150, 130, 1.0)" data-color-format="rgba">
+							<span><i style="background-color: rgba(200, 150, 130, 1.0)"></i></span>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		
+		<canvas id="paper-playback"></canvas>
+		<canvas id="paper"></canvas>
+
+
+		<div class="modal hide fade" id="save-modal">
+			<div class="modal-header">
+				<button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+			    <h3>Save...</h3>
+			</div>
+			<div class="modal-body">
+				<label for="save-name">Name:</label>
+				<input type="text" id="save-name" />
+			</div>
+			<div class="modal-footer">
+				<a href="#" class="btn" data-dismiss="modal">Close</a>
+				<a href="#" id="save" class="btn btn-primary">Save recording</a>
+			</div>
+		</div>
+
+		<div class="modal hide fade" id="open-modal">
+			<div class="modal-header">
+				<button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+			    <h3>Open...</h3>
+			</div>
+			<div class="modal-body">
+				<select data-placeholder="Select a recording..." class="chzn-select"></select>
+			</div>
+			<div class="modal-footer">
+				<a href="#" class="btn" data-dismiss="modal">Close</a>
+				<a href="#" id="open" class="btn btn-primary">Open</a>
+			</div>
+		</div>
+
+		<div class="modal hide fade" id="track-changed-modal">
+			<div class="modal-header">
+				<button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+			    <h3>Hey!</h3>
+			</div>
+			<div class="modal-body">
+				The track has changed, if you continue to paint the recording might get broken. <br>
+				Please <strong>save</strong> the recording now if you want to store it for later use.
+			</div>
+			<div class="modal-footer">
+				<a href="#" class="btn" data-dismiss="modal">Close</a>
+			</div>
+		</div>
+	</body>
+</html>
